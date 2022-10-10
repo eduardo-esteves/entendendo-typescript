@@ -1,4 +1,6 @@
-const idade = 27
-idade = 'Ana'
+let minhaIdade
+minhaIdade = 27
+console.log(typeof minhaIdade)
 
-console.log(idade)
+minhaIdade = '27'
+console.log(minhaIdade)
