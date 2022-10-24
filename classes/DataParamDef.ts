@@ -14,3 +14,12 @@ const casamento = new DataParamDef()
 casamento.dia = 4
 
 console.log(casamento)
+
+class DataConst {
+  constructor (public dia: number = 3, public mes: number = 2, public ano: number = 1990) {}
+}
+
+const niver = new DataConst()
+niver.dia = 4
+
+console.log(niver)
