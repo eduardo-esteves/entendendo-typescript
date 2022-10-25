@@ -1,12 +1,15 @@
 class Produto {
+  precoDesconto: number
+
   constructor (public nome: string, public preco: number, public desconto: number = 0) {
+    this.precoDesconto = preco
     if (this.desconto > 0) {
-      this.calcPreco(this.desconto)
+      this.calcDiscPrice(this.desconto)
     }
   }
 
-  public calcPreco (desconto: number): void {
-    this.preco = this.preco - (this.preco * desconto)
+  public calcDiscPrice (desconto: number): void {
+    this.precoDesconto = this.preco * (1 - desconto)
   }
 }
 
