@@ -3,7 +3,7 @@ class Carro {
 
   constructor (public marca: string, public modelo: string, private readonly velocidadeMaxima: number = 200) {}
 
-  private alterarVelocidade (delta: number): number {
+  protected alterarVelocidade (delta: number): number {
     const novaVelocidade = this.velocidadeAtual + delta
     const velocidadeValida = novaVelocidade >= 0 && novaVelocidade <= this.velocidadeMaxima
 
@@ -37,3 +37,19 @@ console.log({ carro1 })
 carro1.velocidadeAtual = 400
 
 console.log({ carro1 })
+
+class Ferrari extends Carro {
+  public acelerar (): number {
+    return this.alterarVelocidade(20)
+  }
+
+  public frear (): number {
+    return this.alterarVelocidade(-15)
+  }
+}
+
+const f40 = new Ferrari('Ferrari', 'F40', 324)
+
+Array(50).fill(0).forEach(() => f40.acelerar())
+
+console.log({ f40 })
