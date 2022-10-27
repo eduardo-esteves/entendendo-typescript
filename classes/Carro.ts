@@ -39,6 +39,10 @@ carro1.velocidadeAtual = 400
 console.log({ carro1 })
 
 class Ferrari extends Carro {
+  constructor (modelo: string, velMaxima: number) {
+    super('Ferrari', modelo, velMaxima)
+  }
+
   public acelerar (): number {
     return this.alterarVelocidade(20)
   }
@@ -48,7 +52,7 @@ class Ferrari extends Carro {
   }
 }
 
-const f40 = new Ferrari('Ferrari', 'F40', 324)
+const f40 = new Ferrari('F40', 324)
 
 Array(50).fill(0).forEach(() => f40.acelerar())
 
