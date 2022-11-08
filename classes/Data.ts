@@ -14,3 +14,5 @@ const aniversario = new Data(3, 11, 1991)
 aniversario.dia = 4
 
 console.log(aniversario)
+
+export default Data
