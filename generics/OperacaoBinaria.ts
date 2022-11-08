@@ -1,13 +1,13 @@
-class OperacaoBinaria {
-  constructor (public operando1: any, public operando2: any) {}
+abstract class OperacaoBinaria <T, R> {
+  constructor (public operando1: T, public operando2: T) {}
 
-  // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-  executar () {
-    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
+  abstract executar (): R
+}
+
+class SomaBinaria extends OperacaoBinaria<number, number> {
+  executar (): number {
     return this.operando1 + this.operando2
   }
 }
 
-console.log(new OperacaoBinaria('Bom ', 'dia').executar())
-console.log(new OperacaoBinaria(3, 7).executar())
-console.log(new OperacaoBinaria(3, 'Opa').executar())
+console.log(new SomaBinaria(3, 4).executar())
