@@ -5,7 +5,7 @@ class Eletrodomestico {
   }
 }
 
-function logarClasse (classe: Eletrodomestico): void {
+function logarClasse (classe: Function): void {
   console.log(classe)
 }
 
