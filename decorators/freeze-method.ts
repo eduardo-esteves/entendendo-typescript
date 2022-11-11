@@ -1,4 +1,5 @@
 import { naoNegativo } from './freeze-on-property'
+import { infoParam } from './infoParam'
 
 class ContaCorrente {
   @naoNegativo
@@ -9,7 +10,7 @@ class ContaCorrente {
   }
 
   @congelar
-  sacar (valor: number): boolean {
+  sacar (@infoParam valor: number): boolean {
     if (valor) {
       this.saldo -= valor
       return true
@@ -24,7 +25,7 @@ class ContaCorrente {
 }
 
 const cc = new ContaCorrente(10000)
-cc.sacar(15000)
+cc.sacar(10000)
 console.log(cc.getSaldo())
 
 // cc.getSaldo = function () {
