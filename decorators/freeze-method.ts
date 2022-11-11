@@ -1,4 +1,7 @@
+import { naoNegativo } from './freeze-on-property'
+
 class ContaCorrente {
+  @naoNegativo
   private saldo: number
 
   constructor (saldo: number) {
@@ -7,7 +10,7 @@ class ContaCorrente {
 
   @congelar
   sacar (valor: number): boolean {
-    if (valor <= this.saldo) {
+    if (valor) {
       this.saldo -= valor
       return true
     }
@@ -21,7 +24,7 @@ class ContaCorrente {
 }
 
 const cc = new ContaCorrente(10000)
-cc.sacar(5000)
+cc.sacar(15000)
 console.log(cc.getSaldo())
 
 // cc.getSaldo = function () {
